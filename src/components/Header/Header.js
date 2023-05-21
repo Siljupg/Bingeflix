@@ -5,10 +5,12 @@ import { faArrowRight, faGlobe } from '@fortawesome/fontawesome-free-solid';
 import {Input} from 'reactstrap';
 import './Header.css';
 import image from '../../images/BINGEFLIX-LOGO.png';
+import ErrorMessageContainer from '../commonUtils/ErrorMessage';
 
 function Header() {
 
 	const [emailValue, setEmailValue] = useState('');
+    const [className, setClassName] = useState('d-none');
 
 	const validateEmail = ()=> {
 		// regular expression for validating email
@@ -21,8 +23,11 @@ function Header() {
 			const inputValue = event.target.value;
 			if (validateEmail(inputValue)) {
 				setEmailValue(inputValue)
+                setClassName('d-none')
+
 			} else {
-				console.log("error");
+                setClassName('error-msg-container')
+                console.log("inside else");
 			}
 			setEmailValue(inputValue);
 	}
@@ -42,7 +47,7 @@ function Header() {
                     <option>Malayalam</option>
                     <option>Hindi</option>
                 </select>
-                <Link to={'/'} className='btn-trans'>
+                <Link to={'/sign-in'} className='btn-trans'>
                     Sign in
                 </Link>
             </div>
@@ -60,6 +65,10 @@ function Header() {
              placeholder='Email address'/>
             <button className='netflix-button'>Get Started &nbsp; <FontAwesomeIcon icon={faArrowRight}/></button>
         </div>
+        <ErrorMessageContainer
+            className={className}
+            errorMessage="Please enter a valid email address."
+        />
         <div className='rough-space'></div>
     </div>
   )

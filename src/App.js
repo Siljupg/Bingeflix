@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NetflixShowPage from './pages/NetflixShowPage';
+import SignInPage from './pages/SigInPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/netflix-show" element={<NetflixShowPage />} />
+          <Route path='/sign-in' element={<SignInPage/>}/>
         </Routes>
       </div>
     </BrowserRouter>

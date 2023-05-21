@@ -1,0 +1,18 @@
+.error-msg-container {
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    z-index: 1;
+    margin:10px;
+    border-radius: 6px;
+}
+
+.error-message {
+    color: red;
+    margin: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
