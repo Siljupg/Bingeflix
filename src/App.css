@@ -1,0 +1,10 @@
+*{
+  margin: 0;
+}
+
+.app-background {
+  background: #000000;
+  color: #f2f2f2;
+  width: 100%;
+  height: auto;
+}
