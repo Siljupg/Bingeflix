@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faGlobe } from '@fortawesome/fontawesome-free-solid';
 import {Input} from 'reactstrap';
+import Select from 'react-select';
 import './Header.css';
 import image from '../../images/BINGEFLIX-LOGO.png';
 import ErrorMessageContainer from '../commonUtils/ErrorMessage';
@@ -11,6 +12,7 @@ function Header() {
 
 	const [emailValue, setEmailValue] = useState('');
     const [className, setClassName] = useState('d-none');
+    const [disabledButton, setDisabledButton] = useState(true);
 
 	const validateEmail = ()=> {
 		// regular expression for validating email
@@ -22,31 +24,39 @@ function Header() {
             console.log(event.target.value);
 			const inputValue = event.target.value;
 			if (validateEmail(inputValue)) {
-				setEmailValue(inputValue)
-                setClassName('d-none')
+				setEmailValue(inputValue);
+                setClassName('d-none');
+                setDisabledButton(false);
 
 			} else {
                 setClassName('error-msg-container')
                 console.log("inside else");
+                setDisabledButton(true);
 			}
 			setEmailValue(inputValue);
 	}
+
+    const languageOptionList = [
+        {value:'English', label: 'English'},
+        {value:'Espanol', label: 'Espanol'},
+        {value:'Malayalam', label: 'Malayalam'},
+        {value:'Hindi', label:'Hindi'},
+        {value:'Arabic', label:'Arabic'},
+        {value:'Turkish', label:'Turkish'},
+        {value:'Tamil', label:'Tamil'},
+        {value:'Telugu', label:'Telugu'}]
+    const language = languageOptionList.map((language) => {
+        return language;
+    })
 
   return (
     <div className='header-container'>
         <div className='netflix-container'>
             <div className='col'>
                 <img src= {image} alt='Bingeflix'/>
-                {/* <div className='netflix-title'>BINGEFLIX</div> */}
             </div>
             <div className='col d-flex justify-content-end gap-5'>
-                <select className='drop-select'>
-                    <FontAwesomeIcon icon={faGlobe} />
-                    <option>English</option>
-                    <option>Spanish</option>
-                    <option>Malayalam</option>
-                    <option>Hindi</option>
-                </select>
+                <Select className='' options={language}/>
                 <Link to={'/sign-in'} className='btn-trans'>
                     Sign in
                 </Link>
@@ -63,7 +73,11 @@ function Header() {
              type='email' 
              onChange={(event) => {emailValidation(event)}}
              placeholder='Email address'/>
-            <button className='netflix-button'>Get Started &nbsp; <FontAwesomeIcon icon={faArrowRight}/></button>
+            <button 
+            className={disabledButton === true ? 'netflix-button-disabled' : 'netflix-button'}
+            disabled= {disabledButton}
+            >Get Started &nbsp; <FontAwesomeIcon icon={faArrowRight}/>
+            </button>
         </div>
         <ErrorMessageContainer
             className={className}
