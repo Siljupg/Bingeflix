@@ -56,7 +56,7 @@ function Header() {
                 <img src= {image} alt='Bingeflix'/>
             </div>
             <div className='col d-flex justify-content-end gap-5'>
-                <Select className='' options={language}/>
+                <Select className='binge-select' options={language}/>
                 <Link to={'/sign-in'} className='btn-trans'>
                     Sign in
                 </Link>
