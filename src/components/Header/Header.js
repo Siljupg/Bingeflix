@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faGlobe } from '@fortawesome/fontawesome-free-solid';
@@ -7,12 +7,20 @@ import Select from 'react-select';
 import './Header.css';
 import image from '../../images/BINGEFLIX-LOGO.png';
 import ErrorMessageContainer from '../commonUtils/ErrorMessage';
+import { useDispatch } from 'react-redux';
+import { getGenres } from '../../redux/store';
 
 function Header() {
 
 	const [emailValue, setEmailValue] = useState('');
     const [className, setClassName] = useState('d-none');
     const [disabledButton, setDisabledButton] = useState(true);
+
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        dispatch(getGenres())
+    })
 
 	const validateEmail = ()=> {
 		// regular expression for validating email
