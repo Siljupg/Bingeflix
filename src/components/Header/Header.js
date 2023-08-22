@@ -9,6 +9,7 @@ import image from '../../images/BINGEFLIX-LOGO.png';
 import ErrorMessageContainer from '../commonUtils/ErrorMessage';
 import { useDispatch } from 'react-redux';
 import { getGenres } from '../../redux/store';
+import { getGenreList } from '../../redux/action';
 
 function Header() {
 
@@ -19,7 +20,8 @@ function Header() {
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        dispatch(getGenres())
+        // dispatch(getGenres())
+        dispatch(getGenreList())
     })
 
 	const validateEmail = ()=> {
