@@ -26,7 +26,21 @@ function* getGenres() {
     }
 }
 
+function* getMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/trending/${type}/week?api_key=${API_KEY}`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, response: responseData });
+        console.log('res', responseData);
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 export default function* productSaga() {
     yield takeEvery( Actions.PRODUCT_LIST, getProducts );
     yield takeLatest(Actions.GET_GENRE_LIST, getGenres);
+    yield takeLatest(Actions.GET_MOVIES_LIST, getMovies);
 }
