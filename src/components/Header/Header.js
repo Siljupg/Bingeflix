@@ -8,7 +8,6 @@ import './Header.css';
 import image from '../../images/BINGEFLIX-LOGO.png';
 import ErrorMessageContainer from '../commonUtils/ErrorMessage';
 import { useDispatch } from 'react-redux';
-import { getGenres } from '../../redux/store';
 import { getGenreList, getMoviesList } from '../../redux/action';
 
 function Header() {
