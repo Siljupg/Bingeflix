@@ -3,7 +3,9 @@ import '../App.css'
 
 function NetflixShowPage() {
   return (
-    <div className='app-background'>NetflixShowPage</div>
+    <div className='app-background'>
+      NetflixShowPage
+      </div>
   )
 }
 
