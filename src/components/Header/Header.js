@@ -88,11 +88,14 @@ function Header() {
              type='email' 
              onChange={(event) => {emailValidation(event)}}
              placeholder='Email address'/>
+            <Link to={disabledButton ?"#" : '/netflix-show'}>
             <button 
             className={disabledButton === true ? 'netflix-button-disabled' : 'netflix-button'}
             disabled= {disabledButton}
             >Get Started &nbsp; <FontAwesomeIcon icon={faArrowRight}/>
             </button>
+
+            </Link>
         </div>
         <ErrorMessageContainer
             className={className}
