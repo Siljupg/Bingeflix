@@ -81,6 +81,7 @@ function Header() {
             <h1 className='main-text'>Unlimited movies, TV shows and more.</h1>
             <h3 className='main-subtext'>Watch anywhere. Cancel anytime.</h3>
             <h4 className='main-sub-des-text'>Ready to watch? Enter your email to create or restart your membership.</h4>
+            <Link className='main-subtext a-8 netflix-button' to={'/netflix-show'}> Now Trending</Link>
         </div>
         <div className='netflix-search'>
             <Input 

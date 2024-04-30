@@ -188,4 +188,15 @@
     background-color: #e6e6e6;
     transition: all 0.2s;
 }
+
+.a-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.a-8 :hover {
+    text-decoration: none;
+}
    

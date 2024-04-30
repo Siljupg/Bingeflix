@@ -16,6 +16,10 @@ function App() {
           <Route path='/sigh' element={''}/>
           <Route path='/sigh' element={''}/>
           <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
         </Routes>
       </div>
     </BrowserRouter>

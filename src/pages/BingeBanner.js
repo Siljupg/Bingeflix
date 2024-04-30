@@ -3,6 +3,8 @@ import './BingeBanner.css'
 import banner from '../images/Netflix-banner.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList } from '../redux/action';
+import MovieHomeScreen from './MovieHomeScreen';
+import MoviesHomeScreen from './MovieHomeScreen';
 
 function BingeBanner() {
 
@@ -43,8 +45,8 @@ function BingeBanner() {
             <h1 className='banner__description'>
                 {movie?.overview || 'Desription not available right now'}
             </h1>
-            <div className='banner--fadeBottom'/>
         </div>
+        <div className='banner--fadeBottom'><MovieHomeScreen/></div>
 
     </header>
   )
