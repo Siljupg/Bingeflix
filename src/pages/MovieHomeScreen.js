@@ -15,7 +15,7 @@ function MoviesHomeScreen() {
               <img className='movie-poster' src= {`https://image.tmdb.org/t/p/original/${movie.poster_path}`}alt= 'img'/>
             </div>
             <div>
-            <p className='movie-font'>{movie?.original_title || 'Untitled'}</p>
+            <p className='movie-font'>{movie?.original_title || movie?.original_name}</p>
             <p>({movie.media_type})</p>
             </div>
           </button>

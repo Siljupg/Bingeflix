@@ -37,7 +37,7 @@ function BingeBanner() {
         }}
     >
         <div className='banner__contents'>
-            <h1 className='banner__title'>{movie?.title || 'Untitled'}</h1>
+            <h1 className='banner__title'>{movie?.title || movie?.original_name}</h1>
             <div className='banner__buttons'>
                 <button className='banner__button'>Play</button>
                 <button className='banner__button'>Add to My list</button>

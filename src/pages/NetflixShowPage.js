@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import BingeNavBar from './BingeNavBar';
 import BingeBanner from './BingeBanner';
 import MovieHomeScreen from './MovieHomeScreen';
+import { Row } from 'reactstrap';
 
 
 function NetflixShowPage() {
@@ -23,6 +24,10 @@ function NetflixShowPage() {
       <BingeNavBar/>
       <BingeBanner/>
       {/* <MovieHomeScreen/> */}
+      {/* <Row
+      title='NETFLIX ORIGINAL'
+      fetchUrl={}
+      /> */}
 
     </div>
 

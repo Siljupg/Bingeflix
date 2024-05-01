@@ -29,7 +29,7 @@ function* getGenres() {
 function* getMovies(action) {
     try {
         const type = action.params.type
-        const url = `${TMDB_BASE_URL}/trending/${type}/week?api_key=${API_KEY}`
+        const url = `${TMDB_BASE_URL}/trending/${type}/week?api_key=${API_KEY}&language=en-US`
         const response = yield call(fetch, url)
         const responseData = yield response.json();
         yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, responseData });
