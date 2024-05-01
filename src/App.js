@@ -12,6 +12,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/netflix-show" element={<NetflixShowPage />} />
           <Route path='/sign-in' element={<SignInPage/>}/>
+          {/* <Route path='/now-showing' element={<NowShowing/>}/> */}
+          <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
+          <Route path='/sigh' element={''}/>
           <Route path='/sigh' element={''}/>
           <Route path='/sigh' element={''}/>
           <Route path='/sigh' element={''}/>

@@ -81,6 +81,7 @@ function Header() {
             <h1 className='main-text'>Unlimited movies, TV shows and more.</h1>
             <h3 className='main-subtext'>Watch anywhere. Cancel anytime.</h3>
             <h4 className='main-sub-des-text'>Ready to watch? Enter your email to create or restart your membership.</h4>
+            <Link className='main-subtext a-8 netflix-button' to={'/netflix-show'}> Now Trending</Link>
         </div>
         <div className='netflix-search'>
             <Input 
@@ -88,11 +89,14 @@ function Header() {
              type='email' 
              onChange={(event) => {emailValidation(event)}}
              placeholder='Email address'/>
+            <Link to={disabledButton ?"#" : '/netflix-show'}>
             <button 
             className={disabledButton === true ? 'netflix-button-disabled' : 'netflix-button'}
             disabled= {disabledButton}
             >Get Started &nbsp; <FontAwesomeIcon icon={faArrowRight}/>
             </button>
+
+            </Link>
         </div>
         <ErrorMessageContainer
             className={className}

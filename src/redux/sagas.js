@@ -32,7 +32,7 @@ function* getMovies(action) {
         const url = `${TMDB_BASE_URL}/trending/${type}/week?api_key=${API_KEY}`
         const response = yield call(fetch, url)
         const responseData = yield response.json();
-        yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, response: responseData });
+        yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, responseData });
         console.log('res', responseData);
     } catch (error) {
         console.error(error)
