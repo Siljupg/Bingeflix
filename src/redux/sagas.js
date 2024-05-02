@@ -15,14 +15,17 @@ function fetchGenres() {
     );
 }
 
-function* getGenres() {
+function* getGenres(action) {
     try {
-        const response = yield call(fetchGenres);
-        yield put({ type: Actions.GET_GENRE_LIST_SUCCESS, response });
-        console.log('saga called', response);
+        const type = action.params.type
+        console.log('acrtiongenere', type);
+        const url = `${TMDB_BASE_URL}/discover/tv?api_key=${API_KEY}&with_networks=213`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_GENRE_LIST_SUCCESS, responseData });
+        console.log('GENRE', responseData);
     } catch (error) {
-        // Handle error if the API call fails
-        console.error('Error fetching genres:', error);
+        console.error(error)
     }
 }
 
@@ -33,7 +36,7 @@ function* getMovies(action) {
         const response = yield call(fetch, url)
         const responseData = yield response.json();
         yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, responseData });
-        console.log('res', responseData);
+        // console.log('res', responseData);
     } catch (error) {
         console.error(error)
     }

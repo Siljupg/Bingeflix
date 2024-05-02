@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function MoviesHomeScreen() {
 
   const movieList = useSelector((state) => state.productData.movieList);
+  // const movieList = useSelector((state) => state.productData.genreList);
 
     return (
       <div className='row margin-box'>
