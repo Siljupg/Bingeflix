@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../App.css'
-
 import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList, getGenreList } from '../redux/action';
 import { useEffect } from 'react'
@@ -29,12 +28,6 @@ function NetflixShowPage() {
     <div className='movie-container'>
       <BingeNavBar/>
       <BingeBanner/>
-      {/* <MovieHomeScreen/> */}
-      {/* <Row
-      title='NETFLIX ORIGINAL'
-      fetchUrl={}
-      /> */}
-
     </div>
 
   )

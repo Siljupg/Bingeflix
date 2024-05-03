@@ -10,8 +10,8 @@
 }
 
 .movie-box {
-  width: 230px;
-  height: 100vh;
+  width: auto;
+  height: auto;
   background: white;
   display: grid;
   padding: 12px;
@@ -23,13 +23,20 @@
 
 .margin-box {
   margin: 0 5rem;
-  padding: 6rem 0 0 0;
-  display: flex;
+  /* padding: 6rem 0 0 0; */
+  display: inline-flex;
   justify-content: space-around;
 }
 
 .movie-font {
+  overflow-x: hidden;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+}
+
+.scroll-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 40rem;
 }
