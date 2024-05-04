@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList } from '../redux/action';
 import MovieHomeScreen from './MovieHomeScreen';
 import BingeFlixOriginals from './BingeFlixOriginals';
+import TopRatedMovies from './TopRatedMovies';
+import ActionMovies from './ActionMovies';
 
 function BingeBanner() {
 
@@ -51,6 +53,8 @@ function BingeBanner() {
     </header>
     {/* <div className='banner--fadeBottom'/> */}
         <BingeFlixOriginals/>
+        <TopRatedMovies/>
+        <ActionMovies/>
         <MovieHomeScreen/>
     </>
   )

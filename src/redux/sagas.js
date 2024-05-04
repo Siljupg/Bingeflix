@@ -18,12 +18,10 @@ function fetchGenres() {
 function* getGenres(action) {
     try {
         const type = action.params.type
-        console.log('acrtiongenere', type);
         const url = `${TMDB_BASE_URL}/discover/tv?api_key=${API_KEY}&with_networks=213`
         const response = yield call(fetch, url)
         const responseData = yield response.json();
         yield put({ type: Actions.GET_GENRE_LIST_SUCCESS, responseData });
-        console.log('GENRE', responseData);
     } catch (error) {
         console.error(error)
     }
@@ -36,7 +34,31 @@ function* getMovies(action) {
         const response = yield call(fetch, url)
         const responseData = yield response.json();
         yield put({ type: Actions.GET_MOVIES_LIST_SUCCESS, responseData });
-        // console.log('res', responseData);
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function* getTopRatedMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_TOPRATED_MOVIES_SUCCESS, responseData });
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function* getActionMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=28`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_ACTION_MOVIES_SUCCESS, responseData });
+        console.log('res', responseData);
     } catch (error) {
         console.error(error)
     }
@@ -46,4 +68,6 @@ export default function* productSaga() {
     yield takeEvery( Actions.PRODUCT_LIST, getProducts );
     yield takeLatest(Actions.GET_GENRE_LIST, getGenres);
     yield takeLatest(Actions.GET_MOVIES_LIST, getMovies);
+    yield takeLatest(Actions.GET_TOPRATED_MOVIES, getTopRatedMovies)
+    yield takeLatest(Actions.GET_ACTION_MOVIES, getActionMovies)
 }
