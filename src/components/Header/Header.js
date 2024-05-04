@@ -36,7 +36,6 @@ function Header() {
 	}
 
 	const emailValidation = (event) => {
-            console.log(event.target.value);
 			const inputValue = event.target.value;
 			if (validateEmail(inputValue)) {
 				setEmailValue(inputValue);
@@ -45,7 +44,6 @@ function Header() {
 
 			} else {
                 setClassName('error-msg-container')
-                console.log("inside else");
                 setDisabledButton(true);
 			}
 			setEmailValue(inputValue);

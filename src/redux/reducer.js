@@ -5,14 +5,19 @@ const initialState = {
     genreList:[],
     topRatedMoviesList:[],
     actionMoviesList:[],
+    comedyMoviesList:[],
+    horrorMoviesList:[],
+
 }
 
 export const productData = (state = initialState, action) => {
-    // console.log("Data", data, 'action', action);
     let movieList = [];
     let genreList = [];
     let topRatedMoviesList = [];
     let actionMoviesList = [];
+    let comedyMoviesList = [];
+    let horrorMoviesList = [];
+
     switch (action.type) {
         case Actions.SET_PRODUCT_LIST:
             return [action.data, ...state]
@@ -35,6 +40,16 @@ export const productData = (state = initialState, action) => {
                     return {
                         ...state,
                         actionMoviesList: action.responseData.results,
+                    }
+                case Actions.GET_COMEDY_MOVIES_SUCCESS:
+                    return {
+                        ...state,
+                        comedyMoviesList: action.responseData.results,
+                    }
+                case Actions.GET_HORROR_MOVIES_SUCCESS:
+                    return {
+                        ...state,
+                        horrorMoviesList: action.responseData.results,
                     }
         default :
             return state;

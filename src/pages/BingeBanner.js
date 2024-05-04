@@ -7,6 +7,8 @@ import MovieHomeScreen from './MovieHomeScreen';
 import BingeFlixOriginals from './BingeFlixOriginals';
 import TopRatedMovies from './TopRatedMovies';
 import ActionMovies from './ActionMovies';
+import ComedyMoives from './ComedyMovies';
+import HorrorMoives from './HorrorMovies';
 
 function BingeBanner() {
 
@@ -26,8 +28,6 @@ function BingeBanner() {
         }
 
     },[movieList])
-
-    console.log('movie', movie);
 
   return (
     <>
@@ -55,6 +55,8 @@ function BingeBanner() {
         <BingeFlixOriginals/>
         <TopRatedMovies/>
         <ActionMovies/>
+        <ComedyMoives/>
+        <HorrorMoives/>
         <MovieHomeScreen/>
     </>
   )

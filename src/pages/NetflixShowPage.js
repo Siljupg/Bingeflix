@@ -5,6 +5,8 @@ import { getMoviesList,
   getGenreList,
   getTopRatedMoviesList,
   getActionMoviesList,
+  getComedyMoviesList,
+  getHorrorMoviesList,
      } from '../redux/action';
 import { useEffect } from 'react'
 import BingeNavBar from './BingeNavBar';
@@ -30,9 +32,15 @@ function NetflixShowPage() {
 
   useEffect(() => {
     dispatch(getActionMoviesList({ type: 'all' }));
-    console.log("topRated api");
   }, [])
 
+  useEffect(() => {
+    dispatch(getComedyMoviesList({ type: 'all' }));
+  }, [])
+
+  useEffect(() => {
+    dispatch(getHorrorMoviesList({ type: 'all' }));
+  }, [])
 
 
   return (

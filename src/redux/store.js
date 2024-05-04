@@ -19,7 +19,6 @@ export const getGenres = createAsyncThunk('netflix/genres', async () => {
     const { data } = await axios.get(
         `${TMDB_BASE_URL}/genre/movie/list?api_key=${API_KEY}`
     );
-    console.log('data', data);
 })
 
 const netflixSlice = createSlice({

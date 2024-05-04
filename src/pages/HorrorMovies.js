@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import './ActionMovies.css';
+import './TopRatedMovies.css';
 
 
-function ActionMovies () {
-  const movieList = useSelector((state) => state.productData.actionMoviesList);
+function HorrorMoives () {
+  const movieList = useSelector((state) => state.productData.horrorMoviesList);
   return (
     <>
-    <span className='original-text'>ACTION MOVIES</span>
+    <span className='original-text'>HORROR MOVIES</span>
     <div className='scroll-container'>
       <div className='margin-box'>
         {movieList && movieList.map((movie, index) => (
@@ -27,4 +27,4 @@ function ActionMovies () {
   )
 }
 
-export default ActionMovies; 
+export default HorrorMoives; 

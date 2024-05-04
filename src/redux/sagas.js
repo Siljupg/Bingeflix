@@ -58,7 +58,30 @@ function* getActionMovies(action) {
         const response = yield call(fetch, url)
         const responseData = yield response.json();
         yield put({ type: Actions.GET_ACTION_MOVIES_SUCCESS, responseData });
-        console.log('res', responseData);
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function* getComedyMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=35`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_COMEDY_MOVIES_SUCCESS, responseData });
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function* getHorrorMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=27`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_HORROR_MOVIES_SUCCESS, responseData });
     } catch (error) {
         console.error(error)
     }
@@ -70,4 +93,6 @@ export default function* productSaga() {
     yield takeLatest(Actions.GET_MOVIES_LIST, getMovies);
     yield takeLatest(Actions.GET_TOPRATED_MOVIES, getTopRatedMovies)
     yield takeLatest(Actions.GET_ACTION_MOVIES, getActionMovies)
+    yield takeLatest(Actions.GET_COMEDY_MOVIES, getComedyMovies)
+    yield takeLatest(Actions.GET_HORROR_MOVIES, getHorrorMovies)
 }
