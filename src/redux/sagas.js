@@ -87,6 +87,18 @@ function* getHorrorMovies(action) {
     }
 }
 
+function* getRomanceMovies(action) {
+    try {
+        const type = action.params.type
+        const url = `${TMDB_BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=10749`
+        const response = yield call(fetch, url)
+        const responseData = yield response.json();
+        yield put({ type: Actions.GET_ROMANCE_MOVIES_SUCCESS, responseData });
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 export default function* productSaga() {
     yield takeEvery( Actions.PRODUCT_LIST, getProducts );
     yield takeLatest(Actions.GET_GENRE_LIST, getGenres);
@@ -95,4 +107,5 @@ export default function* productSaga() {
     yield takeLatest(Actions.GET_ACTION_MOVIES, getActionMovies)
     yield takeLatest(Actions.GET_COMEDY_MOVIES, getComedyMovies)
     yield takeLatest(Actions.GET_HORROR_MOVIES, getHorrorMovies)
+    yield takeLatest(Actions.GET_ROMANCE_MOVIES, getRomanceMovies)
 }

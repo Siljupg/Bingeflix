@@ -9,6 +9,7 @@ import TopRatedMovies from './TopRatedMovies';
 import ActionMovies from './ActionMovies';
 import ComedyMoives from './ComedyMovies';
 import HorrorMoives from './HorrorMovies';
+import RomanceMovies from './RomanceMovies';
 
 function BingeBanner() {
 
@@ -36,7 +37,7 @@ function BingeBanner() {
         style={{
             backgroundSize: 'cover',
             backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-            backgroundPosition: 'center center'
+            backgroundPosition: 'top'
         }}
     >
         <div className='banner__contents'>
@@ -58,6 +59,7 @@ function BingeBanner() {
         <ComedyMoives/>
         <HorrorMoives/>
         <MovieHomeScreen/>
+        <RomanceMovies/>
     </>
   )
 }

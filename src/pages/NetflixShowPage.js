@@ -7,6 +7,7 @@ import { getMoviesList,
   getActionMoviesList,
   getComedyMoviesList,
   getHorrorMoviesList,
+  getRomanceMoviesList,
      } from '../redux/action';
 import { useEffect } from 'react'
 import BingeNavBar from './BingeNavBar';
@@ -40,6 +41,10 @@ function NetflixShowPage() {
 
   useEffect(() => {
     dispatch(getHorrorMoviesList({ type: 'all' }));
+  }, [])
+
+  useEffect(() => {
+    dispatch(getRomanceMoviesList({ type: 'all' }));
   }, [])
 
 

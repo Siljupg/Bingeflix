@@ -12,6 +12,8 @@ export const GET_COMEDY_MOVIES = 'GET_COMEDY_MOVIES';
 export const GET_COMEDY_MOVIES_SUCCESS = 'GET_COMEDY_MOVIES_SUCCESS';
 export const GET_HORROR_MOVIES = 'GET_HORROR_MOVIES';
 export const GET_HORROR_MOVIES_SUCCESS = 'GET_HORROR_MOVIES_SUCCESS';
+export const GET_ROMANCE_MOVIES = 'GET_ROMANCE_MOVIES';
+export const GET_ROMANCE_MOVIES_SUCCESS = 'GET_ROMANCE_MOVIES_SUCCESS';
 
 
 export const getProductList = (data) => {
@@ -62,3 +64,11 @@ export const getHorrorMoviesList = (params) => {
         params,
     }
 }
+
+export const getRomanceMoviesList = (params) => {
+    return {
+        type: GET_ROMANCE_MOVIES,
+        params,
+    }
+}
+

@@ -7,6 +7,7 @@ const initialState = {
     actionMoviesList:[],
     comedyMoviesList:[],
     horrorMoviesList:[],
+    romanceMoviesList:[],
 
 }
 
@@ -17,6 +18,7 @@ export const productData = (state = initialState, action) => {
     let actionMoviesList = [];
     let comedyMoviesList = [];
     let horrorMoviesList = [];
+    let romanceMoviesList = [];
 
     switch (action.type) {
         case Actions.SET_PRODUCT_LIST:
@@ -50,6 +52,11 @@ export const productData = (state = initialState, action) => {
                     return {
                         ...state,
                         horrorMoviesList: action.responseData.results,
+                    }
+                case Actions.GET_ROMANCE_MOVIES_SUCCESS:
+                    return {
+                        ...state,
+                        romanceMoviesList: action.responseData.results,
                     }
         default :
             return state;
