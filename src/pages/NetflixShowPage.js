@@ -50,6 +50,7 @@ function NetflixShowPage() {
 
   return (
     <div className='movie-container'>
+      
       <BingeNavBar/>
       <BingeBanner/>
     </div>
