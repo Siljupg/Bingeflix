@@ -12,8 +12,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/netflix-show" element={<NetflixShowPage />} />
           <Route path='/sign-in' element={<SignInPage/>}/>
-          <Route path='/sign-i' element={<SignInPage/>}/>
-          <Route path='/sign-i' element={<SignInPage/>}/>
         </Routes>
       </div>
     </BrowserRouter>
