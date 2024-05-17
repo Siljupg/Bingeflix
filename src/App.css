@@ -40,4 +40,10 @@
   overflow-x: scroll;
   white-space: nowrap;
   height: 20rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari) */
 }
