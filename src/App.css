@@ -45,5 +45,5 @@
 }
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* WebKit browsers (Chrome, Safari) */
+  display: none;
 }
