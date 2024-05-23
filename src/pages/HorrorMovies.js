@@ -17,7 +17,6 @@ function HorrorMoives () {
             </div>
             <div>
             <p className='movie-font'>{movie?.original_title || movie?.original_name}</p>
-            {/* <p>({movie.media_type})</p> */}
             </div>
           </button>
         ))}
