@@ -103,9 +103,9 @@ export default function* productSaga() {
     yield takeEvery( Actions.PRODUCT_LIST, getProducts );
     yield takeLatest(Actions.GET_GENRE_LIST, getGenres);
     yield takeLatest(Actions.GET_MOVIES_LIST, getMovies);
-    yield takeLatest(Actions.GET_TOPRATED_MOVIES, getTopRatedMovies)
-    yield takeLatest(Actions.GET_ACTION_MOVIES, getActionMovies)
-    yield takeLatest(Actions.GET_COMEDY_MOVIES, getComedyMovies)
-    yield takeLatest(Actions.GET_HORROR_MOVIES, getHorrorMovies)
-    yield takeLatest(Actions.GET_ROMANCE_MOVIES, getRomanceMovies)
+    yield takeLatest(Actions.GET_TOPRATED_MOVIES, getTopRatedMovies);
+    yield takeLatest(Actions.GET_ACTION_MOVIES, getActionMovies);
+    yield takeLatest(Actions.GET_COMEDY_MOVIES, getComedyMovies);
+    yield takeLatest(Actions.GET_HORROR_MOVIES, getHorrorMovies);
+    yield takeLatest(Actions.GET_ROMANCE_MOVIES, getRomanceMovies);
 }
